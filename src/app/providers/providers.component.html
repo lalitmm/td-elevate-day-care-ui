@@ -4,19 +4,16 @@
   <li *ngFor="let provider of providers"
     [class.selected]="provider === selectedProvider"
     (click)="onSelect(provider)">
-    <span class="badge">{{provider.id}}</span> {{provider.name}}
+    <span class="badge">{{provider.LOC_ID}}</span> {{provider.LOC_NAME}}
   </li>
 </ul>
 
 <div *ngIf="selectedProvider">
 
-  <h2>{{selectedProvider.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedProvider.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedProvider.name" placeholder="name">
-    </label>
-  </div>
+  <h2>{{selectedProvider.LOC_NAME}} Details</h2>
+  <div><span>Location ID: </span>{{selectedProvider.LOC_ID}}</div>
+  <div><span>Location Name: </span>{{selectedProvider.LOC_NAME}}</div>
+  <div><span>Total space: </span>{{selectedProvider.TOTSPACE}}</div>
 
 </div>
 

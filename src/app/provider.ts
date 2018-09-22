@@ -1,4 +1,5 @@
 export class Provider {
-  id: number;
-  name: string;
+  LOC_ID: number;
+  LOC_NAME: string;
+  TOTSPACE: number;
 }
