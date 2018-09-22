@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'td-elevate-day-care-ui';
+  title = 'Toronto City Day Care Website';
 }
