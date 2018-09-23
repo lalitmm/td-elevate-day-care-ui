@@ -3,22 +3,22 @@ import { Provider } from './provider';
 export const PROVIDERS: Provider[] = [
 
       {
-        "LOC_ID": "1013",
-        "LOC_NAME": "Lakeshore Community Child Care Centre",
-        "TOTSPACE": "151",
-        "IGVacant": "10",
-        "IGWaitlist":"34",
+        "loc_id": "1013",
+        "loc_name": "Lakeshore Community Child Care Centre",
+        "totspace": "151",
+        "igvacant": "10",
+        "igwaitlist":"34",
       }, {
-        "LOC_ID": "1014",
-        "LOC_NAME": "Alternative Primary School Parent Group",
-        "TOTSPACE": "83",
-        "IGVacant": "3",
-        "IGWaitlist":"18",
+        "loc_id": "1014",
+        "loc_name": "Alternative Primary School Parent Group",
+        "totspace": "83",
+        "igvacant": "3",
+        "igwaitlist":"18",
       }, {
-        "LOC_ID": "1015",
-        "LOC_NAME": "Cardinal Leger Child Care Centre (Scarborough)",
-        "TOTSPACE": "102",
-        "IGVacant": "1",
-        "IGWaitlist":"11",
+        "loc_id": "1015",
+        "loc_name": "Cardinal Leger Child Care Centre (Scarborough)",
+        "totspace": "102",
+        "igvacant": "1",
+        "igwaitlist":"11",
       },  
 ];

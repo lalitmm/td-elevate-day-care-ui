@@ -7,7 +7,6 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
 }
 .providers li {
   cursor: pointer;
@@ -18,10 +17,20 @@
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.providers li .close_button_x {
+  border-radius: 0 4px 4px 0;
+  float: right;
+  margin: 0 auto;
+  background-color: #A1A5A7;
 }
 .providers li.selected:hover {
-  background-color: #BBD8DC !important;
+  background-color: #A1A5A7 !important;
   color: white;
+  left: 0;
 }
 .providers li:hover {
   color: #607D8B;
@@ -45,4 +54,8 @@
   height: 1.8em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
+}
+
+.providers .provider_name{
+  margin-right: -1em;
 }

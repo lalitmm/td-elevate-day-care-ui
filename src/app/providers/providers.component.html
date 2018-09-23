@@ -1,22 +1,47 @@
 
-<h2>My Providers</h2>
-<ul class="providers">
-  <li *ngFor="let provider of providers"
-    [class.selected]="provider === selectedProvider"
-    (click)="onSelect(provider)">
-    <span class="badge">{{provider.LOC_ID}}</span> {{provider.LOC_NAME}}
-  </li>
-</ul>
+<h2>Available Centers</h2>
+<div>
+  <div>
+    <ul class="providers" *ngIf="!selectedProvider">
+      <li *ngFor="let provider of providers"
+        [class.selected]="provider === selectedProvider"
+        (click)="onSelect(provider)">
+        <span class="badge">{{provider.loc_id}}</span> {{provider.loc_name}}
+      </li>
+    </ul>
 
-<div *ngIf="selectedProvider">
+    <ul class="providers" *ngIf="selectedProvider">
+      <li class="selected"
+        (click)="goBack()">
+        <span class="badge">{{selectedProvider.loc_id}}</span>
+        <span class="provider_name">{{selectedProvider.loc_name}}</span>
+        <span class="badge close_button_x">X</span>
+      </li>
+    </ul>
+  </div>
 
-  <h2>{{selectedProvider.LOC_NAME}} Details</h2>
-  <div><span>Location ID: </span>{{selectedProvider.LOC_ID}}</div>
-  <div><span>Location Name: </span>{{selectedProvider.LOC_NAME}}</div>
-  <div><span>Total space: </span>{{selectedProvider.TOTSPACE}}</div>
-  <div><span>Infant vacant: </span>{{selectedProvider.IGVacant}}</div>
-  <div><span>Infant waitlist: </span>{{selectedProvider.IGWaitlist}}</div>
-
+  <div *ngIf="selectedProvider">
+    <div><span>Location ID: </span>{{selectedProvider.loc_id}}</div>
+    <div><span>Location Name: </span>{{selectedProvider.loc_name}}</div>
+    <div><span>Total space: </span>{{selectedProvider.totspace}}</div>
+    <div>
+      <label>Infant vacant: 
+        <input [(ngModel)]="selectedProvider.igvacant" placeholder="Infant vacant">
+      </label>
+    </div>
+    <div>
+      <label>Infant waitlist:
+        <input [(ngModel)]="selectedProvider.igwaitlist" placeholder="Infant waitlist">
+      </label>
+    </div>
+    <br>
+    <div>
+      <button (click)="updateProvider(selectedProvider)">Update</button>
+      <button (click)="goBack()" style="margin-left:1em">Back</button>
+    </div>
+  </div>
 </div>
+
+
 
 

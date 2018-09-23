@@ -1,7 +1,7 @@
 export class Provider {
-  LOC_ID: string;
-  LOC_NAME: string;
-  TOTSPACE: string;
-  IGVacant: string;
-  IGWaitlist: String;
+  loc_id: string;
+  loc_name: string;
+  totspace: string;
+  igvacant: string;
+  igwaitlist: String;
 }

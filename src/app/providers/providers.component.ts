@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Provider } from '../provider';
 import { ProviderService } from '../provider.service';
 
@@ -10,10 +11,11 @@ import { ProviderService } from '../provider.service';
 export class ProvidersComponent implements OnInit {
 
   providers: Provider[];
-
   selectedProvider: Provider;
 
-  constructor(private providerService: ProviderService) { }
+  constructor(
+    private providerService: ProviderService,
+  ) {}
 
   ngOnInit() {
     this.getProviders();
@@ -22,9 +24,22 @@ export class ProvidersComponent implements OnInit {
   onSelect(provider: Provider): void {
     this.selectedProvider = provider;
   }
-   getProviders(): void {
+
+  getProviders(): void {
     this.providerService.getProviders()
         .subscribe(providers => this.providers = providers);
+  }
+
+  updateProvider(provider: Provider): void {
+    this.providerService.updateProvider(provider)
+        .subscribe(() => {
+          this.goBack();
+          alert("Update successful!");
+        });
+  }
+
+  goBack(): void {
+    this.selectedProvider = null;
   }
 
 }
