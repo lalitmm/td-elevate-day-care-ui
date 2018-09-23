@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Provider } from '../provider';
-import { PROVIDERS } from '../mock-providers';
+import { ProviderService } from '../provider.service';
 
 @Component({
   selector: 'app-providers',
@@ -9,17 +9,22 @@ import { PROVIDERS } from '../mock-providers';
 })
 export class ProvidersComponent implements OnInit {
 
-  providers = PROVIDERS;
+  providers: Provider[];
 
   selectedProvider: Provider;
 
-  constructor() { }
+  constructor(private providerService: ProviderService) { }
 
   ngOnInit() {
+    this.getProviders();
   }
 
   onSelect(provider: Provider): void {
     this.selectedProvider = provider;
+  }
+   getProviders(): void {
+    this.providerService.getProviders()
+        .subscribe(providers => this.providers = providers);
   }
 
 }
